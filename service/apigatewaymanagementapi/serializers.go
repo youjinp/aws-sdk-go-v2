@@ -34,7 +34,7 @@ func (m *awsRestjson1_serializeOpDeleteConnection) HandleSerialize(ctx context.C
 	}
 
 	opPath, opQuery := httpbinding.SplitURI("/@connections/{ConnectionId}")
-	request.URL.Path = opPath
+	request.URL.Path = request.URL.Path + opPath
 	if len(request.URL.RawQuery) > 0 {
 		request.URL.RawQuery = "&" + opQuery
 	} else {
@@ -160,7 +160,7 @@ func (m *awsRestjson1_serializeOpPostToConnection) HandleSerialize(ctx context.C
 	}
 
 	opPath, opQuery := httpbinding.SplitURI("/@connections/{ConnectionId}")
-	request.URL.Path = opPath
+	request.URL.Path = request.URL.Path + opPath
 	if len(request.URL.RawQuery) > 0 {
 		request.URL.RawQuery = "&" + opQuery
 	} else {
